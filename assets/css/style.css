@@ -2,7 +2,7 @@ html,body{
       height: 100%;
     }
     body{
-      margin: 1px;
+      margin: 0;
       background-color: white;
     }
 
@@ -16,24 +16,13 @@ html,body{
       /* Define your template page areas */
       grid-template-areas:
       			"header  header  header"
-                "nav     nav     nav"
-                "article article article"
-                "aside   aside   aside"
-                "footer  footer  footer"; 
+              "nav     nav     nav"
+              "article article article"
+              "aside   aside   aside"
+              "footer  footer  footer"; 
 
     }
 
-    .textbox{
-  width: 200px;
-  border: 5px;
-  color: black;
-  padding: 10px;
-  margin: 7px;
-  /*never used tag*/
-  text-transform: uppercase;
-  font-family:  'Open Sans', sans-serif;
-  background-color: lightblue;
-}
 
     nav {
       grid-area: nav;
@@ -41,24 +30,47 @@ html,body{
       background-color: black;
     }
 
-    article {
+       article {
        grid-area: article;
-    	background-color: white;
+      background-color: white;
        margin: 10px;
        padding: 10px;
     }
 
-
-  footer {
-      grid-area: footer;
-       background-color: white;
-       text-align: center;
-       font-style: italic;
-       color: black;
-      margin-top: 20px;
-      height: 10px;
-      position: fixed;
+    aside {
+      grid-area: aside;
+      background-color: pink;
+      margin: 20px;
+      padding: 10px;
     }
+
+    footer {
+        grid-area: footer;
+        background-color: pink;
+        text-align: center;
+        line-height: 60px;
+}
+
+    footer {
+      grid-area: footer;
+       background-color: black;
+       font-style: italic;
+       color: white;
+      margin-top: 20px;
+    }
+
+
+    address{
+      font-family: roboto;
+  font-weight: 100;
+  font-size: 15px; 
+  text-align: center;
+  padding-top: 60px
+    }
+
+
+
+    
 
     a{
 	margin-right: 10px;
@@ -73,7 +85,6 @@ html,body{
 
 	header{
 	grid-area: header;
-    background-image: ;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: contain;
@@ -109,7 +120,7 @@ h1{
 }
 
 a:link
-{ color: white;
+{ color: green;
 text-decoration: none;
 }
 
@@ -144,70 +155,44 @@ a:active
     letter-spacing: 3px;
 }
 
-
-
-
-
-/*gallery*/
-.gallery{
-  width: 300px;
+.center{
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr 1fr));
-   align-items: left;
-  justify-content: left;
-  align-content: left;
-}
-
-.space{
-  display: block;
-  margin-right: 50px;
-
-
-}
-
-
-gallery h2{
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-  align-items: left;
-  justify-content: left;
-  align-content: left;
-  
-}
-
-gallery h2:before, gallery h2:after{
-  display: inline-block; 
-  content: "";
-  height: 10px;
-}
-
+  width: 100%;
 }
 
 
 
 
 
+/* small devices */
+ @media only screen and (min-width: 375px) {
+   body{
+        background-color: white;
+      }
+      .container {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "nav    nav    nav"
+      "article article aside"
+      "footer footer footer";
+    }
+}
 
 
 
-
-
-
-  /* tablet sized devices */
+ /* tablet sized devices */
   @media only screen and (min-width: 500px) {
 
     body{
-    background-color: pink;
+    background-color: white;
     }
 
     header{
     background-color: white;
-      background-image:
+      background-image: 
       }
 
     .container {
@@ -240,20 +225,6 @@ gallery h2:before, gallery h2:after{
   
   }
 
-/* small devices */
- @media only screen and (min-width: 375px) {
-   body{
-        background-color: lightblue;
-      }
-      .container {
-    display: grid;
-    grid-template-areas:
-      "header header header"
-      "nav    nav    nav"
-      "article article aside"
-      "footer footer footer";
-    }
-}
 
 
 

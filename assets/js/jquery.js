@@ -1,24 +1,15 @@
 $(document).ready(function() {
 
 $("p").mouseover(function(){
-  $("p").css("background-color", "lightgreen");
+  $("p").css("background-color", "lightyellow");
 });
 
 $("p").mouseleave(function(){
-      $("p").css("background-color", "lightblue");
+      $("p").css("background-color", "lightyellow");
    });
 
 
 
-   $("footer").mouseover(function(){
-      $("footer").css("display", "none");
-
-   }); //mouse over
-
-   $("footer").mouseleave(function(){
-      $("footer").css("display", "block");
-   });
- 
     $("button").click(function(){
          //console.log("Does this work when i click?");
          //$("div").animate({left: '250px'});
@@ -28,6 +19,35 @@ $("p").mouseleave(function(){
 
 
    });
+
+ //hide the dog catcher by default on page start
+      $(".about").hide();
+
+      var hideStatus = false;
+
+ 
+        //SHOW AND HIDE EVENTS
+        $(".me").on("click", function() {
+
+
+          // if true
+          if(hideStatus == false){
+              console.log("Just me");
+
+              $(".about").show();
+
+              hideStatus = true;
+          } 
+          else{
+             console.log("show about!");
+
+              $(".about").hide();
+              hideStatus = false;
+          }
+
+
+      });
+
 
 
    console.log("addText is online");
@@ -42,6 +62,16 @@ $("p").mouseleave(function(){
 
 
    });
+
+      $("footer").mouseover(function(){
+      $("footer").css("display", "none");
+
+   }); //mouse over
+
+   $("footer").mouseleave(function(){
+      $("footer").css("display", "block");
+   });
+ 
  });
 
 
